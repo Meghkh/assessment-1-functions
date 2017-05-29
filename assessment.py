@@ -196,23 +196,23 @@ def calculate_price(base_price, state_abbreviation, tax_rate=0.05):
             commonwealth_fee = 3
         return base_price + tax_cost + commonwealth_fee
 
-is_hometown("Lake Forest")
-is_hometown("San Francisco")
-full_name("Meghan", "Khurana")
-greeting("Meghan", "Khurana", "Lake Forest")
-greeting("Elenore", "Rigby", "London")
+# is_hometown("Lake Forest")
+# is_hometown("San Francisco")
+# full_name("Meghan", "Khurana")
+# greeting("Meghan", "Khurana", "Lake Forest")
+# greeting("Elenore", "Rigby", "London")
 
-is_berry("blackberry")
-is_berry("durian")
-shipping_cost("blackberry")
-shipping_cost("durian")
-append_to_list([3, 5, 7], 2)
-calculate_price(40, "CA")
-calculate_price(400, "NM")
-calculate_price(150, "OR", 0.0)
-calculate_price(60, "PA")
-calculate_price(38, "MA")
-calculate_price(126, "MA")
+# is_berry("blackberry")
+# is_berry("durian")
+# shipping_cost("blackberry")
+# shipping_cost("durian")
+# append_to_list([3, 5, 7], 2)
+# calculate_price(40, "CA")
+# calculate_price(400, "NM")
+# calculate_price(150, "OR", 0.0)
+# calculate_price(60, "PA")
+# calculate_price(38, "MA")
+# calculate_price(126, "MA")
 
 ###############################################################################
 
@@ -240,6 +240,49 @@ calculate_price(126, "MA")
 
 
 ###############################################################################
+
+def add_items_to_list(lst, *args):
+    """ Return a list that is taken in as a parameter that adds an arbitrary
+    number of things to the list given as arguments as well
+
+    >>> add_items_to_list([1, 2, 3], 4, 5, 6, 7, 8)
+    [1, 2, 3, 4, 5, 6, 7, 8]
+
+    """
+
+    for thing in args:
+        lst.append(thing)
+
+    return lst
+
+
+def word_multiplier_outer(word):
+    """ The outer function will take in a word. The inner function will multiply
+        that word by 3. Then, the outer function will call the inner function.
+        Print the output as a tuple, with the original function argument at index
+        0 and the result of the inner function at index 1.
+
+        >>> word_multiplier_outer("Balloonicorn")
+        ('Balloonicorn', 'BalloonicornBalloonicornBalloonicorn')
+
+    """
+
+    print (word, word_multiplier_inner(word))
+
+
+def word_multiplier_inner(word):
+    """ The outer function will take in a word. The inner function will multiply
+        that word by 3. Then, the outer function will call the inner function.
+        Print the output as a tuple, with the original function argument at index
+        0 and the result of the inner function at index 1.
+
+        >>> word_multiplier_inner("Balloonicorn")
+        'BalloonicornBalloonicornBalloonicorn'
+
+
+    """
+    return word * 3
+
 
 # END OF ASSESSMENT: You can ignore everything below.
 
